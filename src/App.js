@@ -1,7 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function App() {
-  return <div>Hello, TrybeWallet!</div>;
+class App extends Component {
+  reder() {
+    return (
+      <div>
+        Hello, TrybeWallet!
+      </div>
+    );
+  }
 }
 
 export default App;
