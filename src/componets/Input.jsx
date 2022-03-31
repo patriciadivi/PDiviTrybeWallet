@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 class Input extends Component {
   reder() {
@@ -24,5 +25,13 @@ class Input extends Component {
     );
   }
 }
+
+Input.propTypes = {
+  valueInputID: PropTypes.string,
+  valeuInputName: PropTypes.string,
+  valeuInputText: PropTypes.string,
+  valeuPlaceholder: PropTypes.string,
+  valeuDataTestid: PropTypes.string,
+}.isRequisit;
 
 export default Input;
