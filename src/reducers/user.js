@@ -3,6 +3,7 @@ import { INSERT_FORMS_PERSON } from '../actions';
 
 const INITIAL_STATE = {
   email: '',
+
 };
 
 const user = (state = INITIAL_STATE, action) => {
