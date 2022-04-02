@@ -9,7 +9,6 @@ const INITIAL_STATE = {
 const user = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case INSERT_FORMS_PERSON:
-    console.log('cheguei reducers');
     return {
       ...state,
       email: action.email,

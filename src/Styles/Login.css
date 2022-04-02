@@ -1,0 +1,49 @@
+.Login {
+  align-content: space-between;
+  background-color: rgb(67, 67, 131);
+  border: 1px solid salmon;
+  border-radius: 0.3rem 0.8rem;
+  box-shadow: 5px 3px 8px black;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  justify-content: center;
+  margin: 60px auto 10px;
+  padding: 0.8rem;
+  width: 250px;
+}
+
+.Login header h2 {
+  color: aliceblue;
+  font-size: 2rem;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+.Login form {
+  padding: 0.3rem;
+  text-align: center;
+}
+
+.Login label {
+  color: aliceblue;
+  margin-right: 0.2rem;
+}
+
+.Login input {
+  border: 1px solid slateblue;
+  border-radius: 0.2rem;
+  margin: 0.3rem 0 0.4rem;
+  padding: 0.3rem;
+  text-align: center;
+  width: 150px;
+}
+
+.Login button {
+  border: 0;
+  border-radius: 0.2rem 0.5rem;
+  color: rgb(61, 61, 128);
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}

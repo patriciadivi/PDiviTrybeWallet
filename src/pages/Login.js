@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { actionformsPersonal } from '../actions';
 import Input from '../Components/Input';
 import Button from '../Components/Button';
+import '../Styles/Login.css';
 
 class Login extends Component {
   constructor() {
@@ -54,7 +55,7 @@ class Login extends Component {
     const { email, password, disabledButton } = this.state;
     return (
 
-      <section>
+      <section className="Login">
         <header>
           <h2>Login</h2>
         </header>

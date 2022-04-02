@@ -1,0 +1,25 @@
+.Wallter nav {
+  background-color: rgb(67, 67, 131);
+  display: flex;
+  justify-content: space-around;
+  padding: 0.5rem;
+}
+
+.Wallter nav select {
+  align-self: center;
+  background-color: aliceblue;
+  border: 0;
+  border-radius: 0.2rem 0.5rem;
+  color: rgb(61, 61, 128);
+  cursor: pointer;
+  height: 30px;
+}
+
+.Wallter nav p {
+  color: antiquewhite;
+
+}
+
+.Wallter h2 {
+  text-align: center;
+}

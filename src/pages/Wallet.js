@@ -3,22 +3,28 @@ import {
   string,
 } from 'prop-types';
 import { connect } from 'react-redux';
-// import user from '../reducers/user';
+import { thunkFetchCurrencies } from '../actions/actionWallet';
+import '../Styles/Wallter.css';
 
 class Wallet extends React.Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch(thunkFetchCurrencies());
+  }
+
   render() {
     const { email } = this.props;
     return (
-      <section>
+      <section className="Wallter">
         <header>
-          <h2>TrybeWallet</h2>
           <nav>
-            <p data-testid="email-field">{ email }</p>
-            <p data-testid="total-field">0</p>
             <select>
               <option data-testid="header-currency-field">BRL</option>
             </select>
+            <p data-testid="total-field">0</p>
+            <p data-testid="email-field">{ email }</p>
           </nav>
+          <h2>TrybeWallet</h2>
         </header>
       </section>
     );
