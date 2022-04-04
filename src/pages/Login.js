@@ -94,13 +94,6 @@ class Login extends Component {
   }
 }
 
-// Login.propTypes = {
-//   clickProps: PropTypes.func,
-//   history: PropTypes.shape({
-//     push: PropTypes.func,
-//   }),
-// }.isRequired;
-
 const mapDispatchToProps = (dispatch) => ({
   clickProps: (email) => {
     dispatch(actionformsPersonal(email));
