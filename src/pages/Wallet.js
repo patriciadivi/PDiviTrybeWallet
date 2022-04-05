@@ -33,8 +33,6 @@ class Wallet extends React.Component {
   };
 
   handleClick = (event) => {
-    // const { id } = this.state;
-
     event.preventDefault();
     const { dispatch } = this.props;
     dispatch(thunkAddExpense(this.state));
@@ -114,7 +112,7 @@ class Wallet extends React.Component {
               onChange={ this.handleChange }
               value={ method }
             >
-              <option selected="selected">Dinheiro</option>
+              <option>Dinheiro</option>
               <option>Cartão de crédito</option>
               <option>Cartão de débito</option>
             </select>
@@ -130,7 +128,7 @@ class Wallet extends React.Component {
               value={ tag }
             >
               <option>Alimentação</option>
-              <option selected="selected">Lazer</option>
+              <option>Lazer</option>
               <option>Trabalho</option>
               <option>Transporte</option>
               <option>Saúde</option>
@@ -141,9 +139,30 @@ class Wallet extends React.Component {
             label="Adicionar despesa"
             name="disabledButton"
             onClick={ this.handleClick }
-            // disabled={ isDisabled }
+            disabled={ false }
           />
         </form>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Descrição</th>
+              <th>Tag</th>
+              <th>Método de pagamento</th>
+              <th>Valor</th>
+              <th>Moeda</th>
+              <th>Câmbio utilizado</th>
+              <th>Valor convertido</th>
+              <th>Moeda de conversão</th>
+              <th>Editar/Excluir</th>
+            </tr>
+          </thead>
+          {/* <tr>
+              <td>Alfreds Futterkiste</td>
+              <td>Maria Anders</td>
+              <td>Germany</td>
+            </tr> */}
+        </table>
       </section>
     );
   }
@@ -152,15 +171,14 @@ class Wallet extends React.Component {
 Wallet.propTypes = {
   email: string.isRequired,
   currencies: arrayOf(string).isRequired,
-  // disabled: bool.isRequired,
   dispatch: func.isRequired,
-  // expenses: arrayOf(string).isRequired,
   total: number,
-
+  // disabled: bool,
 };
 
 Wallet.defaultProps = {
   total: 0,
+  // disabled: false,
 };
 
 const mapStateToProps = (state) => ({

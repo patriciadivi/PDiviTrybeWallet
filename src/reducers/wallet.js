@@ -18,7 +18,6 @@ const wallet = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: [...state.expenses, action.expenses],
-      // total: (+state.total + +action.totalCalculation).toString().slice(0, (((+state.total + +action.totalCalculation).toString())).indexOf()),
       total: (+state.total + +action.totalCalculation),
     };
   default:
