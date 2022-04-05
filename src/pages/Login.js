@@ -45,10 +45,6 @@ class Login extends Component {
     const { email } = this.state;
     clickProps(email);
     this.setState({
-
-    }, () => history.push('/'))
-
-    this.setState({
       email: '',
       password: '',
       disabledButton: true,

@@ -44,7 +44,6 @@ class Wallet extends React.Component {
     const { value, description, currency,
       method, tag } = this.state;
     const { email, currencies, total, expenses } = this.props;
-    console.log(expenses);
 
     let convertTotal = total.toString();
     const VALUE_MAGIC = 3;
