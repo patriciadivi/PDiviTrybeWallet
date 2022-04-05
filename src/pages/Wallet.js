@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  string, arrayOf, func, number,
+  string, arrayOf, func, number, shape, oneOfType,
 } from 'prop-types';
 import { connect } from 'react-redux';
 import { thunkFetchCurrencies, thunkAddExpense } from '../actions/actionWallet';
@@ -43,7 +43,8 @@ class Wallet extends React.Component {
     // State do componente Wallet
     const { value, description, currency,
       method, tag } = this.state;
-    const { email, currencies, total } = this.props;
+    const { email, currencies, total, expenses } = this.props;
+    console.log(expenses);
 
     let convertTotal = total.toString();
     const VALUE_MAGIC = 3;
@@ -143,7 +144,7 @@ class Wallet extends React.Component {
           />
         </form>
 
-        <table>
+        <table name="">
           <thead>
             <tr>
               <th>Descrição</th>
@@ -157,11 +158,39 @@ class Wallet extends React.Component {
               <th>Editar/Excluir</th>
             </tr>
           </thead>
-          {/* <tr>
-              <td>Alfreds Futterkiste</td>
-              <td>Maria Anders</td>
-              <td>Germany</td>
-            </tr> */}
+          <tbody>
+            {expenses.map((ele) => (
+              <tr key={ ele.id }>
+                <td>{ ele.description }</td>
+                <td>{ele.tag}</td>
+                <td>{ele.method}</td>
+                <td>{Number(ele.value).toFixed(2)}</td>
+                <td>{(ele.exchangeRates[ele.currency].name)}</td>
+                <td>{Number(ele.exchangeRates[ele.currency].ask).toFixed(2)}</td>
+                <td>{(ele.value * (+ele.exchangeRates[ele.currency].ask)).toFixed(2)}</td>
+                <td>Real</td>
+                <td>
+                  <Button
+                    type="button"
+                    label="Editar"
+                    name="editButton"
+                    onClick={ this.handleClick }
+                    disabled={ false }
+                  />
+                </td>
+                <td>
+                  <Button
+                    type="button"
+                    label="Excluir"
+                    name="deletButton"
+                    onClick={ this.handleClick }
+                    disabled={ false }
+                  />
+                </td>
+              </tr>
+
+            ))}
+          </tbody>
         </table>
       </section>
     );
@@ -173,6 +202,14 @@ Wallet.propTypes = {
   currencies: arrayOf(string).isRequired,
   dispatch: func.isRequired,
   total: number,
+  expenses: arrayOf(shape({
+    id: number.isRequired,
+    description: string.isRequired,
+    value: oneOfType([string, number]),
+    currency: string.isRequired,
+    method: string.isRequired,
+    tag: string.isRequired,
+  })).isRequired,
   // disabled: bool,
 };
 

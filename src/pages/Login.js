@@ -45,6 +45,10 @@ class Login extends Component {
     const { email } = this.state;
     clickProps(email);
     this.setState({
+
+    }, () => history.push('/'))
+
+    this.setState({
       email: '',
       password: '',
       disabledButton: true,
@@ -53,6 +57,8 @@ class Login extends Component {
 
   render() {
     const { email, password, disabledButton } = this.state;
+    // const { history } = this.props;
+    console.log(this.props);
     return (
 
       <section className="Login">
